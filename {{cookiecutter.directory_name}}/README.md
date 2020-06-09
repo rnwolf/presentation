@@ -81,7 +81,7 @@ gh issue create
 ## Create branch and switch to it!
 
 ```
-git checkout -b {{ github_username }}/issue<number>     Where <number> is the issue number.
+git checkout -b {{ cookiecutter.github_username }}/issue<number>     Where <number> is the issue number.
 ```
 
 Make changes slides, index.adoc & images.
@@ -96,7 +96,7 @@ pdf.bat
 ## Push the change to the remote repo to keep them safe
 
 ```
-git push -u origin {{ github_username }}/issue<number>
+git push -u origin {{ cookiecutter.github_username }}/issue<number>
 ```
 
 Make more changes.
@@ -114,7 +114,7 @@ gh pr [status, list, view, checkout, create]
 ```
 git checkout master
 
-git merge --no-ff {{ github_username }}/issue<number>
+git merge --no-ff {{ cookiecutter.github_username }}/issue<number>
 ```
 
 The additional “–no-ff” tells git we want to retain all of the commit messages prior to the merge.
@@ -126,7 +126,7 @@ git push origin master
 ## Delete the branch as we don't need it anymore.
 
 ```
-git branch -d  {{ github_username }}/issue# 
+git branch -d  {{ cookiecutter.github_username }}/issue# 
 ```
 
 ## Close the issue used to track the changes.
