@@ -1,6 +1,6 @@
 # Cookiecutter template to create Asciidoctor-Reveal.js presentations
 
-[Asciidoctor-Reveal.js]https://asciidoctor.org/docs/asciidoctor-revealjs/ is a great tool to create presentations that can be displayed with browser of as PDF files.
+[Asciidoctor-Reveal.js](https://asciidoctor.org/docs/asciidoctor-revealjs/) is a great tool to create presentations that can be displayed with browser of as PDF files.
 
 In order to create these presentations quickly with mininal delay it is useful to have a master template to start from. 
 
