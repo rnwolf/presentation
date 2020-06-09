@@ -1,0 +1,106 @@
+.title {
+	font-weight: bolder;
+}
+
+.reveal section div.plain span img {
+	border: 0;
+	box-shadow: none;
+    }
+/*.reveal section h1 {
+	font-family: cursive;
+    }
+*/
+
+.reveal section small {
+	margin-top: 15.3em;
+	font-family: fantasy;
+    }
+
+section.white.background {
+	background-color: white;
+	}
+	
+section.red.background {
+	background-color: red;
+	}
+	
+section.red{
+background-color: red;
+}
+
+section.green {
+background-color: green;
+}
+
+.admonitionblock.note.green{
+	background-color: greenyellow;
+}
+
+/* The canvas keyword can be used instead of background for the same effect. */
+section.blue.canvas {
+background-color: blue;
+}
+
+/* [.red] for font-awesome icons */
+div.red > p > span.icon {
+	color: red;
+  }
+
+/* font example */
+@import 'https://fonts.googleapis.com/css?family=Baloo+Bhai';
+section.topic h2,
+section.topic div p {
+	font-family: 'Baloo Bhai', cursive;
+}
+
+section[data-state="topic"]  div.ulist {
+    font-family: 'Baloo Bhai', cursive;
+	font-size: small;
+	background-color: chartreuse;
+}
+section[data-state="topic"] h2 {
+    font-family: 'Baloo Bhai', cursive;
+	font-size: 2em;
+	color: coral;
+}
+
+//.admonitionblock table td.content
+.admonitionblock.note table td.content {
+	padding-left:1.125em;
+	padding-right:1.25em;
+	border-left:1px solid #adadad;
+	color:black;
+	background-color: #e4e4e4;
+}
+
+.admonitionblock.warning td.icon{
+	color: orange ; 
+}
+
+
+.admonitionblock.note td.icon{
+	color: blue ; 
+}
+
+.admonitionblock.tip td.icon{
+	color: yellow; 
+	background-color: lightgray;
+}
+
+.admonitionblock.tip td.content{
+	color: black; 
+	background-color: lightgray;
+}
+
+.admonitionblock.important.red td{
+	color: red;
+	background-color: #e4e4e4;
+}
+
+.fa-exclamation-circle{
+	color: red;
+}
+
+.fa-fire{
+	color: red;
+}

@@ -1,0 +1,13 @@
+{
+	"directory_name": "present_some_topic",
+	"_copy_without_render": [
+        "*.html",
+        "*reveal.js*",
+        "images"
+    ],
+	"Title": "My Main presentation title",
+	"sub_title": "A bit more detail about the presentation",
+	"full_name": "Rudiger Wolf",
+	"email": "Rudiger.Wolf@ThroughputFocus.com",
+	"github_username": "rnwolf"
+}

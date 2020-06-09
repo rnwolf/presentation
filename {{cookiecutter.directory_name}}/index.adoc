@@ -1,0 +1,855 @@
+= {{ cookiecutter.Title }}: {{ cookiecutter.sub_title }}
+:source-highlighter: highlight.js
+:highlightjs-languages: python,x86asm,asciidoc
+:revealjsdir: reveal.js
+:revealjs_theme: white
+:customcss: index.css
+:revealjs_slideNumber: h.v
+:revealjs_history: true
+:revealjs_fragmentInURL: true
+:imagesdir: images/
+:revealjs_hash: true
+:revealjs_center: false
+:revealjs_height: 1080
+:revealjs_width: 1920
+:icons: font
+:sectnumlevels: 2
+:revealjs_plugins: revealjs-plugins.js
+:revealjs_plugins_configuration: revealjs-plugins-conf.js
+:toclevels: 1
+
+{{ cookiecutter.full_name }}
+{{ cookiecutter.email }}
+
+Preamble that give some context for the side deck. This could be a few lines.
+
+Slidedeck published {localdate}
+
+////
+
+Produce the index.html with
+
+asciidoctor-revealjs --require asciidoctor-kroki index.adoc
+
+http://localhost:8000/?print-pdf
+
+https://revealjs.com/pdf-export/
+
+Produce the pdf file with decktape
+
+https://github.com/astefanutti/decktape
+
+decktape reveal index.html index.pdf
+
+or by 
+////
+
+
+[%notitle]
+ifdef::backend-revealjs[== Table of Contents]
+
+toc::[]
+
+<<<
+== Introduction
+
+This is some text to introduce the deck.
+
+[state=topic]
+== Target CustomCSS at Slide 
+
+* By using a [state=topic] in the slide header 
+* we can target a font size in the custom CSS only at this "topic"
+
+
+////
+== Concealed
+
+should be concealed
+////
+
+[.columns]
+== Lots of bullet Points
+
+[.column]
+* Hello 1 this is a long line. Hello how about a very longs line.
+
+* Hello 2
+* Hello 3
+* Hello 4
+* Hello 5
+* Hello 6
+
+[.column]
+* Hello 1 this is a long line. hello how about a very lings line.
+* Hello 2
+* Hello 3
+* Hello 4
+
+
+[.notes]
+--
+Speaker notes go here.
+
+* tell anecdote
+* make a point
+--
+
+[.columns]
+== Lots of points as fragments 
+
+[.column]
+[%step]
+* Hello 1 this is a long line. hello how about a very lings line.
+* Hello 2
+* Hello 3
+* Hello 4
+* Hello 5
+* Hello 6
+
+[.columns]
+== Styles
+
+.This will need custom css to be used well.
+
+[.column]
+* literal
+* verse
+* quote
+* listing
+
+[.column]
+* TIP
+* NOTE
+* IMPORTANT
+* WARNING
+* CAUTION
+
+[.column]
+* abstract
+* partintro
+* comment
+* example
+* sidebar
+* source
+
+[.notes]
+--
+Speaker notes go here.
+
+* tell anecdote
+* make a point
+--
+
+=== Literal
+
+.Does this work?
+
+Some regular text goes here.
+
+[literal]
+----
+  Hello this is a literal text
+  with more than one line.
+----
+* Point A
+* Point B this is a longer line.
+
+=== Verse
+
+[verse]
+----
+  Hello this is a verse text
+  with more than one line.
+----
+
+=== quote
+
+[quote]
+----
+  Hello this is a quote text
+  with more than one line.
+----
+
+=== verse
+
+[verse]
+----
+  Hello this is a verse text
+  with more than one line.
+----
+
+=== listing
+
+[listing]
+----
+  Hello this is a listing text
+  with more than one line.
+----
+
+[.notes]
+--
+Speaker notes go here.
+
+* tell anecdote
+* make a point
+--
+
+
+=== TIP
+
+[TIP]`  This is a tip  `
+
+[TIP]
+----
+This is a tip
+----
+
+=== An abstract
+
+[abstract]`  This is some text `
+
+[abstract]
+----
+This is a text block
+with two lines of text
+----
+
+== Videos
+
+=== vimeo autostart
+
+video::44878206[vimeo, options=autoplay]
+
+=== YouTube Auto-sized
+
+video::kZH9JtPBq7k[youtube, start=34]
+
+[%notitle,background-iframe="https://www.youtube.com/embed/LaApqL4QjH8?rel=0&start=3&enablejsapi=1&autoplay=1&loop=1&controls=0&modestbranding=1"]
+=== a youtube video
+
+== Admonition
+
+[%notitle]
+=== A Note
+
+NOTE: Take note that these slides are getting gradually more dangerous
+
+=== !
+
+TIP: Moving forward is still the way to go
+
+=== !
+
+[.red]
+IMPORTANT: Danger ahead
+
+Using the custom css to change the colour of the icon.
+
+=== !
+
+CAUTION: Take note that these slides are getting gradually more dangerous
+
+=== !
+
+WARNING: Danger imminent
+
+[WARNING]
+====
+This is a warning block
+====
+
+=== Admonition block complex
+
+[NOTE]
+.Keeping notes
+====
+These are very thorough notes.
+
+* With
+* Bullets
+====
+
+=== Admonition with caption
+
+[TIP, caption='ProTip(TM)']
+.Reveal.JS
+====
+Use include blocks to split your talks into small sections.
+It's easier to reorganize afterwards.
+====
+
+== Background effects
+
+== Place background image in slide
+
+Great for putting logos etc into slide.
+position  top or bottom
+size  contain or cover 
+
+[.right]
+image::200w.webp[alt text,width=400px]
+
+* Yup
+* That
+* Too
+
+image::kanban-example.svg[background, size=contain , role=plain]
+
+
+
+// New: with roles backed by CSS (see background-color.css)
+//[.red.background]
+//[.red]
+[.red.background]
+
+
+=== Here
+
+[cols=2*,options=header]
+|===
+| Header 1
+| Header 2
+
+| Row 1, Col1
+| Row 1, Col2
+
+| Row 2, Col1
+| Row 2, Col2
+
+|===
+
+[.left]
+* Red
+* Another line
+
+=== We
+
+Green Note section.
+
+[.green]
+NOTE: Green background color shouldn't be applied to the whole slide
+
+Note that this in done in conjection with the custom css.
+
+[.blue.canvas]
+=== Go
+
+Blue
+
+// role that alter style but not slide color
+[.topic]
+=== Default color
+
+but fancy font
+
+[.white.background]
+=== SVG Image background stretch
+
+[.stretch]
+image::kanban-example.svg[Alt Text, size=cover, role=plain]
+
+=== SVG Image 
+
+[.right]
+image::kanban-example.svg[alt text, width=400px]
+
+
+=== !
+//SVG Image background
+
+//[.stretch]
+image::kanban-example.svg[scaledWidth="25%", role=plain]
+
+//background size=cover
+
+== Embeded diagrams
+
+=== PlantUML diagrams
+
+[.stretch]
+[plantuml, diagram-classes, svg]     
+....
+class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+....
+
+=== GraphViz Diagram
+
+[.stretch]
+[graphviz]
+....
+digraph G {
+  Hello->World
+}
+....
+
+
+[.blue.canvas]
+=== More Plaunt UML pictures
+
+[.stretch]
+[plantuml, diagram-classes, svg]     
+....
+@startuml
+participant Alice
+actor Bob
+
+ref over Alice, Bob : init
+
+Alice -> Bob : hello
+
+ref over Bob
+  This can be on
+  several lines
+end ref
+@enduml
+....
+
+== Fragments
+
+[%step]
+* Fragments
+* Are a reveal.js feature
+* Very familiar to Powerpoint users
+
+image::ellipse.svg[background, role=plain]
+
+== Fragments in URL
+
+[%step]
+* With reveal.js 3.6
+* Fragments
+* Can now be displayed in URLs
+
+== Using data-fragment
+
+[%step]
+* You can now
+* Do
+* Fancy
+* CSS Things
+* With Fragments
+* See `fragments.css`
+
+
+== Normal
+
+image::200w.webp[]
+
+== Stretched
+
+[.stretch]
+image::200w.webp[]
+
+== Hardcoded
+
+image::200w.webp[width="1200"]
+
+== Image Floating
+
+image::200w.webp[width=400px,float=right]
+
+* Some
+* Points
+* You
+* Won't
+* Look At
+
+== Image Role Right
+
+// This is asciidoctor-revealjs specific, it allows you to put an image on the right even though it is not part of the same block
+// It uses custom CSS, see #197.
+
+image::200w.webp[role=right,width=400px]
+
+* Some
+* Points
+* You
+* Won't
+* Look At
+
+[.notes]
+--
+* Using open blocks work too
+* Yay!
+--
+
+== Image Role Right [alt syntax]
+
+[.right]
+image::200w.webp[alt text,width=400px]
+
+* Yup
+* That
+* Too
+
+
+== Default table with header
+
+[cols=2*,options=header]
+|===
+| Header 1
+| Header 2
+
+| Row 1, Col1
+| Row 1, Col2
+
+| Row 2, Col1
+| Row 2, Col2
+
+|===
+
+== Frames
+
+=== Frame none
+
+[cols=2*,frame=none,options=header]
+|===
+| Header 1
+| Header 2
+
+| Row 1, Col1
+| Row 1, Col2
+
+| Row 2, Col1
+| Row 2, Col2
+
+|===
+
+=== Frame sides
+
+[cols=2*,frame=sides,options=header]
+|===
+| Header 1
+| Header 2
+
+| Row 1, Col1
+| Row 1, Col2
+
+| Row 2, Col1
+| Row 2, Col2
+
+|===
+
+=== Frame topbot
+
+[cols=2*,frame=topbot,options=header]
+|===
+| Header 1
+| Header 2
+
+| Row 1, Col1
+| Row 1, Col2
+
+| Row 2, Col1
+| Row 2, Col2
+
+|===
+
+== Grid
+
+=== Grid none
+
+[cols=2*,grid=none,options=header]
+|===
+| Header 1
+| Header 2
+
+| Row 1, Col1
+| Row 1, Col2
+
+| Row 2, Col1
+| Row 2, Col2
+
+|===
+
+=== Grid cols
+
+[cols=2*,grid=cols,options=header]
+|===
+| Header 1
+| Header 2
+
+| Row 1, Col1
+| Row 1, Col2
+
+| Row 2, Col1
+| Row 2, Col2
+
+|===
+
+=== Grid rows
+
+[cols=2*,grid=rows,options=header]
+|===
+| Header 1
+| Header 2
+
+| Row 1, Col1
+| Row 1, Col2
+
+| Row 2, Col1
+| Row 2, Col2
+
+|===
+
+== Combo
+
+=== Grid none, frame none
+
+[cols=2*,grid=none,frame=none,options=header]
+|===
+| Header 1
+| Header 2
+
+| Row 1, Col1. This is a long line of text that will wrap when it get to the end of the table cell.
+| Row 1, Col2
+
+| Row 2, Col1
+| Row 2, Col2
+
+|===
+
+== Alignments
+
+[cols="^,<,>", options="header"]
+|===
+
+| Name
+| Description
+| Version
+
+| Asciidoctor
+| Awesome way to write documentation
+| 2.0.4
+|===
+
+[.columns]
+== Columns with size
+
+[.column.is-one-third]
+--
+* **Kotlin**
+* Java
+* Scala
+--
+
+[.column]
+--
+Programming language for Android, mobile cross-platform
+and web development, server-side, native,
+and data science. Open source forever Github.
+--
+
+[.columns.wrap]
+== Should Wrap But Doesn't
+
+[.column]
+* Things here should wrap when we whave a long line of text.
+* We can make a point related to the image.
+* Todate is god weather.
+
+[.column]
+image::cover.jpg[width=900px]
+
+[.column]
+image::70s.jpg[width=900px]
+
+== Supports all of reveal.js 3.9.2 features
+
+
+[background-video="https://github.com/obilodeau/asciidoctor-assets/raw/master/videos/synthwave.mp4",background-opacity=0.7]
+=== Background videos
+
+=== Automatic Source Code Highlighting!
+
+icon:exclamation-circle[] Including step-by-step line highlights
+
+[.columns.is-vcentered]
+=== Assembly from a Compiler
+
+[.column]
+[source,x86asm,highlight="3..6|7..9|10|11,12"]
+----
+main        proc near
+var_10      = dword ptr -10h
+            push ebp
+            mov ebp, esp
+            and esp, 0FFFFFFF0h
+            sub esp, 10h
+            mov eax, offset aHelloWorld
+            mov [esp+10h+var_10], eax
+            call _printf
+            mov eax, 0
+            leave
+            retn
+main        endp
+----
+
+[.column.is-one-third]
+--
+* Backed by Highlight.js
+* Many languages supported
+* Ability to focus on specific lines
+--
+
+=== With very simple source!
+
+[source,asciidoc]
+....
+[source,x86asm,highlight="3..6|7..9|10|11,12"]
+----
+main        proc near
+var_10      = dword ptr -10h
+            push ebp
+            mov ebp, esp
+            and esp, 0FFFFFFF0h
+            sub esp, 10h
+            mov eax, offset aHelloWorld
+            mov [esp+10h+var_10], eax
+            call _printf
+            mov eax, 0
+            leave
+            retn
+main        endp
+----
+....
+
+=== And More!
+
+* Background images (and gif!)
+* Speaker notes
+* Embedded videos
+* Embedded and interactive iframes
+* etc.
+
+
+[.columns.is-vcentered]
+== Plus AsciiDoc Features
+
+[.column]
+--
+image::ellipse.svg[]
+
+Powered by Asciidoctor
+--
+
+[.column]
+.Available toolchains
+* Ruby / Bundler
+* JavaScript / NPM
+* Standalone executables
+* icon:exclamation-circle[] JVM / Maven
+
+[.columns.is-vcentered]
+=== Easy Grid Layout
+
+[.column]
+* Easy
+
+[.column]
+* Flexible
+
+[.column]
+Grid Layout
+
+[.column.is-one-third]
+--
+[source,asciidoc]
+.Source
+....
+[.columns]
+=== Easy Grid Layout
+
+[.column]
+* Easy
+
+[.column]
+* Flexible
+
+[.column]
+Grid Layout
+
+[.column.is-one-third]
+[source,asciidoc]
+[...]
+....
+--
+
+[.columns.is-vcentered]
+=== FontAwesome Integration
+
+[.column.is-one-third]
+--
+Expressive icon:palette[] Icons icon:icons[]
+at your Fingertips icon:hand-holding-heart[]
+
+[.red]
+icon:heart[size=3x]
+--
+
+[.column]
+--
+[source,asciidoc]
+.Source
+....
+Expressive icon:palette[]
+Icons icon:icons[]
+at your Fingertips
+icon:hand-holding-heart[]
+
+[.red]
+icon:heart[size=3x]
+....
+--
+
+[.columns]
+=== Includes
+
+[.column]
+You can include content from other files.
+Including source code!
+
+[.column]
+--
+[source,asciidoc]
+.Example Source
+....
+[source,python]
+----
+\include::demo.py[]
+----
+....
+--
+
+=== For Great Technical Presentations!
+
+
+[.important.white.background,transition="zoom"]
+== Can you do that PowerPoint?
+
+
+[transition=fade,transition-speed=slow]
+== Learn More!
+
+* https://github.com/asciidoctor/asciidoctor-reveal.js/[Asciidoctor reveal.js]
+* https://revealjs.com[reveal.js]
+* https://github.com/asciidoctor/asciidoctor/[Asciidoctor]
+* https://asciidoctor.org/docs/what-is-asciidoc/[What is AsciiDoc?]
+* https://github.com/asciidoctor/asciidoctor-reveal.js/raw/master/examples/release-4.0.adoc[This slide deck's AsciiDoc source]
+
+== Attributes
+
+.Built-in
+* Date: {localdate}
+* asciidoctor-version: {asciidoctor-version}
+* docdir: {docdir}
+* docfile: {docfile}
+* imagesdir: {imagesdir}
