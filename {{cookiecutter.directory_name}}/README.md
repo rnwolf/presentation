@@ -46,50 +46,91 @@ cookiecutter gh:rnwolf/present
 
 Answer questions.
 
+```
 cd "{{ cookiecutter.directory_name }}"
 git init
 git add --all
+```
+
 ## Create the remote repo.
+
+```
 gh repo create
+```
 
 ## Commit presentation to local repo.
+
+```
 git commit -m "First commit"
+```
 
 ## Connect up local and remote repo. -u = upstream
+
+```
 git push -u origin master
+```
 
 ## Create a GitHub Issue and document what the intention of the planned change is.
-gh issue create
 
-## Make a note of the issue <number> to be used for a working branch.
+```
+gh issue create
+```
+
+** Make a note of the issue <number> to be used for a working branch.**
 
 ## Create branch and switch to it!
-git checkout -b {{ repo_name }}/issue<number>     Where <number> is the issue number.
 
-Make changes to index.adoc & images
-Build the outputs
+```
+git checkout -b {{ github_username }}/issue<number>     Where <number> is the issue number.
+```
+
+Make changes slides, index.adoc & images.
+
+### Build the outputs
+
+```
 build.bat
 pdf.bat
+```
 
 ## Push the change to the remote repo to keep them safe
 
-git push -u origin {{ repo_name }}/issue<number>
+```
+git push -u origin {{ github_username }}/issue<number>
+```
 
 Make more changes.
 
+```
 git push
+```
+
+## Consider Raising a pull request to request the changes on the branch to be merged to master
+
+gh pr [status, list, view, checkout, create]
 
 ## Ready to merge the branch to master
+
+```
 git checkout master
 
-git merge --no-ff {{ repo_name }}/issue<number>
+git merge --no-ff {{ github_username }}/issue<number>
+```
 
 The additional “–no-ff” tells git we want to retain all of the commit messages prior to the merge.
 
+```
 git push origin master
+```
 
 ## Delete the branch as we don't need it anymore.
-git branch -d  {{ repo_name }}/issue# 
+
+```
+git branch -d  {{ github_username }}/issue# 
+```
 
 ## Close the issue used to track the changes.
+
+```
 gh issue close <number>
+```
