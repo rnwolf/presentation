@@ -22,7 +22,8 @@ Github is used to store files for safekeeping and as a hub for collaborative edi
 
 ### Install AsciiDoctor and supporing node packages
 
-```yarn global add @asciidoctor/core asciidoctor-pdf @asciidoctor/reveal.js asciidoctor-kroki asciidoctor
+```
+yarn global add @asciidoctor/core asciidoctor-pdf @asciidoctor/reveal.js asciidoctor-kroki asciidoctor
 ```
 
 ### Check that utilities are installed
@@ -37,7 +38,7 @@ gh --version
 ## Use Cookiecutter
 
 ```
-cookiecutter rnwolf/presentation
+cookiecutter gh:rnwolf/presentation
 ```
 
 Answer questions.
