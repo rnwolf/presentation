@@ -49,3 +49,6 @@ cd <presentation directory>
 
 Open README.md for further instructions.
 
+# License
+
+[MIT](https://opensource.org/licenses/MIT)
